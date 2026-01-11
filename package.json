@@ -1,0 +1,49 @@
+{
+    "name": "escacs-permit-engine",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "engines": {
+        "node": ">=22.0.0"
+    },
+    "scripts": {
+        "dev": "tsx watch src/api/server.ts",
+        "build": "tsc -b",
+        "start": "npx tsx src/api/server.ts",
+        "api": "npx tsx src/api/server.ts",
+        "lint": "eslint .",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:coverage": "vitest run --coverage",
+        "test:e2e": "playwright test",
+        "test:acceptance": "NODE_OPTIONS='--import tsx' cucumber-js tests/acceptance/*.feature --import 'tests/step-definitions/**/*.ts'"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.19.8",
+        "@hono/swagger-ui": "^0.5.3",
+        "@hono/zod-openapi": "^1.2.0",
+        "@hono/zod-validator": "^0.7.6",
+        "@langchain/anthropic": "^1.3.0",
+        "@langchain/google-genai": "^2.1.0",
+        "@langchain/openai": "^1.2.0",
+        "hnswlib-node": "^3.0.0",
+        "hono": "^4.11.3",
+        "langchain": "^0.3.0",
+        "pdf-parse": "^1.1.1",
+        "zod": "^4.3.5"
+    },
+    "devDependencies": {
+        "@cucumber/cucumber": "^12.5.0",
+        "@eslint/js": "^9.39.1",
+        "@playwright/test": "^1.57.0",
+        "@types/node": "^24.10.7",
+        "@types/pdf-parse": "^1.1.5",
+        "@vitest/coverage-v8": "^4.0.16",
+        "eslint": "^9.39.1",
+        "globals": "^16.5.0",
+        "tsx": "^4.21.0",
+        "typescript": "~5.9.3",
+        "typescript-eslint": "^8.46.4",
+        "vitest": "^4.0.16"
+    }
+}
